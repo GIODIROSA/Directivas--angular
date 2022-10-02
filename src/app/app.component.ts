@@ -11,8 +11,9 @@ export class AppComponent {
   registrado = false;
   nombre: String = '';
   apellido: String = '';
+  cargo: String = '';
+
   entradas: any;
-  
 
   constructor() {
     this.entradas = [
@@ -22,8 +23,6 @@ export class AppComponent {
       { titulo: 'Kotlin potencia para tus app' },
       { titulo: '¿Dónde quedó pascal?' },
     ];
-
-  
   }
 
   registrarUsuario() {

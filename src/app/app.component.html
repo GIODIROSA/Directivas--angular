@@ -5,14 +5,28 @@
 <form>
   <input type="text" name="nombre" [(ngModel)]="nombre" /> <br />
   <input type="text" name="apellido" [(ngModel)]="apellido" /> <br />
+  <input type="text" name="cargo" [(ngModel)]="cargo" /> <br />
 
   <input type="submit" value="Registrar" (click)="registrarUsuario()" />
 </form>
 
 <br />
 
+<!-- NGSTYLE -->
+<!-- <p *ngIf="registrado; else sinRegistrar">
+  {{ mensaje }} - {{ nombre }} {{ apellido }} - el cargo que desarrolla es:
+  <span [ngStyle]="{ color: cargo == 'profesor' ? 'red' : 'blue' }">
+    {{ cargo }}
+  </span>
+</p> -->
+
+<!-- 
+NGCLASS -->
 <p *ngIf="registrado; else sinRegistrar">
-  {{ mensaje }} - {{ nombre }} {{ apellido }} - sos Bienvenido
+  {{ mensaje }} - {{ nombre }} {{ apellido }} - el cargo que desarrolla es:
+  <span [ngClass]="{ paraDirectores: cargo == 'profesor'}">
+    {{ cargo }}
+  </span>
 </p>
 
 <ng-template #sinRegistrar>
